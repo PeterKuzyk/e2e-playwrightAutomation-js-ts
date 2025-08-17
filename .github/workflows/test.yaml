@@ -2,11 +2,8 @@ name: Playwright Tests
 
 on:
   push:
-    branches:
-      - '**'
   pull_request:
-    branches:
-      - '**'
+  workflow_dispatch:
 
 jobs:
   test:
@@ -15,16 +12,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Cache Node.js modules
+        uses: actions/cache@v4
         with:
-          node-version: '18'
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Install Playwright Browsers (Official Action)
+        uses: microsoft/playwright-github-action@v1
 
       - name: Run Playwright tests
         run: npx playwright test
@@ -35,4 +35,3 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
-
