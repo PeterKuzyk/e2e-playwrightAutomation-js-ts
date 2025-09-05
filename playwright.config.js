@@ -10,6 +10,7 @@ const config = ({
     reporter: [['html', { open: 'never' }]],
     use: {
         browserName: 'chromium',
+        headless: false,
     },
 });
 
