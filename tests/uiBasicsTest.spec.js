@@ -1,6 +1,5 @@
 import {test, expect} from '@playwright/test';
 
-
 test('First Playwright test', async ({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -53,8 +52,8 @@ test('Assertion demo working with titles', async ({browser}) => {
     await userName.fill('rahulshettyacademy');
     await password.fill('learning');
     await signInBtn.click();
-     console.log(await cardTitles.first().textContent());
-    // console.log(await cardTitles.nth(1).textContent());
+    console.log(await cardTitles.first().textContent());
+    console.log(await cardTitles.nth(1).textContent());
     const allTitles = await cardTitles.allTextContents();
     console.log(allTitles);
 })
