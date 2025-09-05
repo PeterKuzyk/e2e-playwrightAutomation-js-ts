@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test.only('Practice Website', async ({page}) => {
+test('Practice Website', async ({page}) => {
     const userEmail = page.locator(" #userEmail");
     const password = page.locator(' #userPassword');
     const login = page.locator(" #login");
