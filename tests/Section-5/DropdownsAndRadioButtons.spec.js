@@ -14,7 +14,7 @@ test('Demo test for selective Dropdowns', async ({page}) => {
     await signInBtn.click();
 })
 
-test.only('Demo test for Radio Buttons and check boxes', async ({page}) => {
+test('Demo test for Radio Buttons and check boxes', async ({page}) => {
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     const userName = page.locator('#username');
     const password = page.locator('#password');
@@ -47,5 +47,4 @@ test.only('Demo test for Radio Buttons and check boxes', async ({page}) => {
     await expect(documentLink).toHaveAttribute("class", "blinkingText");
     await signInBtn.click();
     // await page.pause();
-
 })

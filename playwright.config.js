@@ -11,6 +11,8 @@ const config = ({
     use: {
         browserName: 'chromium',
         headless: false,
+        screenshot: 'on',
+        stackTrace: true,
     },
 });
 
