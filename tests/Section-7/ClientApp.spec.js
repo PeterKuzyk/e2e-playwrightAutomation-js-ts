@@ -1,5 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
+
+// Section-7 Client App Practice, folder 27
 test('Practice Website', async ({page}) => {
     const userEmail = page.locator(" #userEmail");
     const password = page.locator(' #userPassword');
