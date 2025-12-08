@@ -24,6 +24,4 @@ test('Client App login - 40', async ({page}) => {
     await page.getByText( 'Place Order' ).click();
 
     await expect(page.getByText('Thankyou for the order.')).toBeVisible();
-
-
 })
